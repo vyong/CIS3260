@@ -33,138 +33,20 @@ public class Rules{
 	
 	public boolean validAttack(Piece p1, Piece p2, int x1, int y1, int x2, int y2){
 		//Checks whether the attack is valid, returns true or false.
-
-		//Check if piece 1 is current player's piece, return false if not
-		Player playerColour = getColour();
-		if (p1.getColour() != playerColour) {
-			return false;
-		}
-
-		//Check if piece 2 is opponent's piece, return false if not
-		if (p2.getColour() == playerColour) {
-			return false;
-		}
-
-		//check to make sure cell 1 has a piece of current player
-		Piece cellPiece = checkCell(x1, y1);
-		if(cellpiece.colour != playerColour || cellPiece == NULL) {
-			return false;
-		}
-
-		//Check if cell 2 has opponent piece
-		cellPiece = checkCell(x2, y2);
-		if(cellpiece.colour == playerColour || cellPiece == NULL) {
-			return false;
-		}
-
-		int xDiff = x2 - x1;
-		int yDiff = y2 - y1;
-
-		//check if cell 1 is beside cell 2
-		if(xDiff == 1 && yDiff == 0){
-			Piece thirdCell = checkCell(x2 + 1, y2);
-
-			if (thirdCell == NULL) {
-				return true;
-			}
-
-			else {
-				return false;
-			}
-		}
-
-		else if (xdiff == -1 && yDiff == 0){
-			Piece thirdCell = checkCell(x2 - 1, y2);
-
-			if (thirdCell == NULL) {
-				return true;
-			}
-
-			else {
-				return false;
-			}
-		}
-		else if( xDiff == 0 && yDiff == 1){
-			Piece thirdCell = checkCell(x2, y2 + 1);
-
-			if (thirdCell == NULL) {
-				return true;
-			}
-
-			else {
-				return false;
-			}
-		}
-		else if( xDiff == 0 && yDiff == -1){
-			Piece thirdCell = checkCell(x2, y2 - 1);
-
-			if (thirdCell == NULL) {
-				return true;
-			}
-
-			else {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-
+		
+		
+		
+		return false;
 	}
 
 	public boolean vaildMove(Piece p1, int x1, int y1, int x2, int y2){
 		//Checks whether the move is valid, return true or false.
 		
-		//Check if piece 1 is current player's piece, return false if not
-		Player playerColour = getColour();
-		if (p1.getColour() != playerColour) {
-			return false;
-		}
-
-		//check to make sure cell 1 has a piece of current player
-		Piece cellPiece = checkCell(x1, y1);
-		if(cellpiece.colour != playerColour || cellPiece == NULL) {
-			return false;
-		}
-
-		int xDiff = x2 - x1;
-		int yDiff = y2 - y1;
-		//check if cell 1 is beside cell 2
-		if(xDiff == 1 && yDiff == 0){
-			return true;
-		}
-
-		else if (xdiff == -1 && yDiff == 0){
-			return true;
-		}
-		else if( xDiff == 0 && yDiff == 1){
-			return true;
-		}
-		else if( xDiff == 0 && yDiff == -1){
-			return true;
-		}
-		else {
-			return false;
-		}
+		return false;
 	}
 	
 	public boolean validPlace(Piece p1, int x, int y){
 		//Checks whether the placement is valid, returns true or false.
-
-		//Check if piece 1 is current player's piece, return false if not
-		Player playerColour = getColour();
-		if (p1.getColour() != playerColour) {
-			return false;
-		}
-
-		//check to make sure cell 1 doesn't have a piece
-		Piece cellPiece = checkCell(x1, y1);
-		if(cellPiece == NULL) {
-			return true;
-		}
-		else {
-			return false;
-		}
 		
 		return false;
 	}
@@ -172,21 +54,6 @@ public class Rules{
 	public boolean validTake(Piece p1, int x, int y){
 		//Checks whether the removal is valid, returns true or false
 		
-
-		//check to make sure cell 1 has a piece of opponent
-		Piece cellPiece = checkCell(x1, y1);
-		if(cellpiece.colour == p1.colour || cellPiece == NULL) {
-			return false;
-		}
-		else {
-			return true;
-		}
-
-		/*
-		check if piece is correct colour of opponents, return false if not enemy colour
-
-		check if piece in cell contains opponent's piece, return false if not
-
-		*/
+		return false;
 	}
 }

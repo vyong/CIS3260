@@ -37,8 +37,29 @@ public class View{
 		return null;
 	}
 
-	private void displayViewBoard(){
+	//Changed from private to public so the driver can see it
+	public void displayViewBoard(){
 		//Displays the board on the screen.
+		
+		//int rows = 5; 
+	 	//int cols = 6; 
+	 	
+	 	System.out.println("\n**** Displaying Board ****");
+	 	
+	 	System.out.print(" _ _ _ _ _"); 
+	 	System.out.print("\n"); 
+		for(int y = 0; y<6; y++)
+	 	{
+		 	for(int i = 0; i<5;i++)
+		 	{
+		 		System.out.print("|");
+		 		System.out.print("_");
+		 	}	
+	 		System.out.print("|"); 	
+	 		System.out.print("\n");
+	 	}
+	 	
+	 	System.out.println("\n**************************\n");
 		
 	}
 }

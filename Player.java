@@ -18,6 +18,7 @@ Furthermore, I certify that this assignment was prepared by me specifically for 
 
 import java.io.*;
 import java.util.*;
+import java.util.Scanner;
 
 public class Player{
 	public enum Colour {
@@ -26,12 +27,21 @@ public class Player{
 	
 	private Colour colour;
 	
+	private boolean turn = false;
+	
 	public Player(){
 		colour = Colour.WHITE;
+		turn = false;
 	}
 	
 	public Player(Colour colour){
 		this.colour = colour;
+	}
+	
+	//We added this to be able to know which players turn it is
+	public Player(Colour colour, boolean turn){
+		this.colour = colour;
+		this.turn = turn;
 	}
 	
 	
@@ -74,10 +84,18 @@ public class Player{
 	public Colour getColour(){
 		return colour;
 	}
+	
+	public boolean getTurn(){
+		return turn;
+	}
 
 	//Setter's
 	
 	public void setColour(Colour pColour){
 		colour = pColour;
+	}
+	
+	public void setTurn(boolean t){
+		turn = t;
 	}
 }

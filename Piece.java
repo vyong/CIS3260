@@ -21,6 +21,11 @@ public class Piece{
 	
 	private Colour colour;
 	
+	
+	//We added the location for the piece (x and y)
+	private int x;
+	private int y;
+	
 	public Piece(){
 		colour = Colour.WHITE;
 	}
