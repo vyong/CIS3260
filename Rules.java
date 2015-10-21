@@ -33,19 +33,83 @@ public class Rules{
 	
 	public boolean validAttack(Piece p1, Piece p2, int x1, int y1, int x2, int y2){
 		//Checks whether the attack is valid, returns true or false.
-		
-		/*
-		Check if piece 1 is current player's piece, return false if not
-		check to make sure cell 1 has a piece of current player
 
-		Check if piece 2 is opponent's piece, return false if not
-		Check if cell 2 has opponent piece
+		//Check if piece 1 is current player's piece, return false if not
+		Player playerColour = getColour();
+		if (p1.getColour() != playerColour) {
+			return false;
+		}
 
-		check if cell 1 is beside cell 2
+		//Check if piece 2 is opponent's piece, return false if not
+		if (p2.getColour() == playerColour) {
+			return false;
+		}
 
-		check third cell to make sure it's empty
-		*/
-		return false;
+		//check to make sure cell 1 has a piece of current player
+		Piece cellPiece = checkCell(x1, y1);
+		if(cellpiece.colour != playerColour || cellPiece == NULL) {
+			return false;
+		}
+
+		//Check if cell 2 has opponent piece
+		cellPiece = checkCell(x2, y2);
+		if(cellpiece.colour == playerColour || cellPiece == NULL) {
+			return false;
+		}
+
+		int xDiff = x2 - x1;
+		int yDiff = y2 - y1;
+
+		//check if cell 1 is beside cell 2
+		if(xDiff == 1 && yDiff == 0){
+			Piece thirdCell = checkCell(x2 + 1, y2);
+
+			if (thirdCell == NULL) {
+				return true;
+			}
+
+			else {
+				return false;
+			}
+		}
+
+		else if (xdiff == -1 && yDiff == 0){
+			Piece thirdCell = checkCell(x2 - 1, y2);
+
+			if (thirdCell == NULL) {
+				return true;
+			}
+
+			else {
+				return false;
+			}
+		}
+		else if( xDiff == 0 && yDiff == 1){
+			Piece thirdCell = checkCell(x2, y2 + 1);
+
+			if (thirdCell == NULL) {
+				return true;
+			}
+
+			else {
+				return false;
+			}
+		}
+		else if( xDiff == 0 && yDiff == -1){
+			Piece thirdCell = checkCell(x2, y2 - 1);
+
+			if (thirdCell == NULL) {
+				return true;
+			}
+
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+
 	}
 
 	public boolean vaildMove(Piece p1, int x1, int y1, int x2, int y2){
@@ -64,7 +128,7 @@ public class Rules{
 		//Checks whether the placement is valid, returns true or false.
 		
 		/*
-		check if player has pieces and right color, return false if no more pieces
+		check if player has pieces and right colour, return false if no more pieces
 		check if cell is empty, return false if cell isn't empty
 		
 		if empty cell, placement is valid, return true
@@ -78,7 +142,7 @@ public class Rules{
 		//Checks whether the removal is valid, returns true or false
 		
 		/*
-		check if piece is correct color of opponents, return false if not enemy color
+		check if piece is correct colour of opponents, return false if not enemy colour
 
 		check if piece in cell contains opponent's piece, return false if not
 
