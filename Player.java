@@ -56,7 +56,7 @@ public class Player{
 		//sets the piece to the cell. Returns true or false.
 		boolean result = false;
 
-		result = gameBoard.checkPlacment(x,y);
+		result = gameBoard.checkPlacement(x,y);
 		if(result == true){
 			//
 			//UPDATE THE CELL in gameBoard
@@ -78,8 +78,6 @@ public class Player{
 			//
 		}
 		return result;
-		
-		return false;
 	}
 	
 	public boolean attackPiece(Board gameBoard, int x1, int y1, int x2, int y2){
