@@ -115,6 +115,17 @@ public class Rules{
 	public boolean vaildMove(Piece p1, int x1, int y1, int x2, int y2){
 		//Checks whether the move is valid, return true or false.
 		
+		//Check if piece 1 is current player's piece, return false if not
+		Player playerColour = getColour();
+		if (p1.getColour() != playerColour) {
+			return false;
+		}
+		
+		//check to make sure cell 1 has a piece of current player
+		Piece cellPiece = checkCell(x1, y1);
+		if(cellpiece.colour != playerColour || cellPiece == NULL) {
+			return false;
+		}
 		/*
 		check if piece 1 is current player's piece, return false if not
 		check to make sure cell 1 is piece of current player
