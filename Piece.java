@@ -1,6 +1,11 @@
 /************************* Piece.java ****************************
-Student Name: Erik Zorn - Wallentin  Student Number: 0864583
-Date: Thur, Oct.15 / 2015			 Course Name: CIS3260
+Student Name: 						Student Number: 
+Devin Dagg							0852134
+Erik Zorn - Wallentin 				0864583
+Taha Ansari							0849535
+Vincent Yong						0744993
+ 
+Date: Wed, Oct.21 / 2015			Course Name: CIS3260
 I have exclusive control over this submission via my password.
 By including this statement in this header comment, I certify that:
 1) I have read and understood the University policy on academic integrity;
@@ -15,23 +20,25 @@ import java.io.*;
 import java.util.*;
 
 public class Piece{
+
 	public enum Colour {
 		WHITE, BLACK
 	}
-	
+
 	private Colour colour;
-	
-	
-	//We added the location for the piece (x and y)
-	private int x;
-	private int y;
+	private int x; 
+	private int y; 
 	
 	public Piece(){
 		colour = Colour.WHITE;
+		int x = 0; 
+		int y = 0; 
 	}
 	
-	public Piece(Colour colour){
+	public Piece(Colour colour, int x, int y){
 		this.colour = colour;
+		this.x = x;
+		this.y = y; 
 	}
 	
 	//Getter's
@@ -40,9 +47,25 @@ public class Piece{
 		return colour;
 	}
 
+	public int getX(){
+		return this.x; 
+	}
+
+	public int getY(){
+		return this.y;
+	}
+
 	//Setter's
 	
 	public void setColour(Colour pColour){
 		colour = pColour;
+	}
+
+	public void setX(int x){
+		this.x = x; 
+	}
+
+	public void setY(int y){
+		this.y = y; 
 	}
 }

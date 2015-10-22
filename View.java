@@ -1,11 +1,11 @@
 /************************* View.java ****************************
 Student Name: 						Student Number: 
-Devin Dagg
+Devin Dagg							0852134
 Erik Zorn - Wallentin 				0864583
-Taha Ansari
-Vincent Yong
+Taha Ansari							0849535
+Vincent Yong						0744993
  
-Date: Thur, Oct.15 / 2015			Course Name: CIS3260
+Date: Wed, Oct.21 / 2015			Course Name: CIS3260
 I have exclusive control over this submission via my password.
 By including this statement in this header comment, I certify that:
 1) I have read and understood the University policy on academic integrity;
@@ -37,29 +37,26 @@ public class View{
 		return null;
 	}
 
-	//Changed from private to public so the driver can see it
 	public void displayViewBoard(){
 		//Displays the board on the screen.
-		
 		//int rows = 5; 
 	 	//int cols = 6; 
-	 	
-	 	System.out.println("\n**** Displaying Board ****");
-	 	
-	 	System.out.print(" _ _ _ _ _"); 
+	 	//needs to print out the cell array now 
+	 	System.out.print("___________"); 
 	 	System.out.print("\n"); 
-		for(int y = 0; y<6; y++)
-	 	{
-		 	for(int i = 0; i<5;i++)
-		 	{
+		for(int y = 0; y<6; y++){
+		 	for(int i = 0; i<5;i++){
 		 		System.out.print("|");
 		 		System.out.print("_");
 		 	}	
 	 		System.out.print("|"); 	
 	 		System.out.print("\n");
 	 	}
-	 	
-	 	System.out.println("\n**************************\n");
-		
+		//printing out cells on grid
+		for(int k = 0; k < 6; k++){
+			for(int j = 0; j < 5; j++){
+				//System.out.print(cells[k][j]);
+			}
+		}
 	}
 }

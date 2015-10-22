@@ -1,11 +1,11 @@
 /************************* Driver.java ****************************
 Student Name: 						Student Number: 
-Devin Dagg
+Devin Dagg							0852134
 Erik Zorn - Wallentin 				0864583
 Taha Ansari							0849535
 Vincent Yong						0744993
  
-Date: Thur, Oct.15 / 2015			Course Name: CIS3260
+Date: Wed, Oct.21 / 2015			Course Name: CIS3260
 I have exclusive control over this submission via my password.
 By including this statement in this header comment, I certify that:
 1) I have read and understood the University policy on academic integrity;
@@ -37,15 +37,20 @@ public class Driver{
 	}
 	
 	//Main Program
-	public static void main(String [ ] args)
-	{
+	public static void main(String [ ] args){
     	System.out.println("**** Yote Program ****");
     	
-    	View vb = new View();
+		
+		//Instance Variables
+    	View view = new View();
+		viewBoard vb = new viewBoard();
     	Driver driver = new Driver();
     	Player[] player = new Player[2];
-    	
     	Rules rules = new Rules();
+		
+		Piece piece = new Piece();
+		Board board = new Board();
+		
     	
     	//User Input Variable
     	Scanner input = new Scanner( System.in );
@@ -54,16 +59,17 @@ public class Driver{
     	boolean checker = true;
 		
 		while (checker){
+			//Keep in loop unless user inputs 1 or 2!
        		System.out.print("Enter number of the first player to move ( 1 or 2 ): ");
         	try {
             	choosePlayerTurn = input.nextInt();
-            	
             	if (choosePlayerTurn == 1 || choosePlayerTurn == 2){
             		checker = true;
             		break;
             	}
         	}
         	catch (Throwable t) {
+				//Catch anything that is not an int and crash the program!
             	System.out.println("Crashing program, user input was not an int! Please try again...");
             	System.exit(-1);
             	break;
@@ -71,7 +77,6 @@ public class Driver{
         }
         
         //Setup Players
-        
         if (choosePlayerTurn == 1){
         	//Player one goes first!
         	player[0] = new Player(Player.Colour.WHITE, true);
@@ -85,11 +90,12 @@ public class Driver{
 		System.out.println("\nSelected Player: Player_" + choosePlayerTurn);
     	
     	
-    	vb.displayViewBoard();
+    	view.displayViewBoard();
     	
     	
     	//This should be called when wanting to find a new player!
     	//Find next player turn
+		System.out.println("\nFinding next players turn...");
     	boolean checkPlayer = false;
     	for (int i = 0; i < 2; i++){
     		System.out.println("Turn: " + player[i].getTurn());
@@ -98,7 +104,9 @@ public class Driver{
     			//Set Player Turn of i
     			System.out.println("Players Turn: Player_" + i );
     			
+				//Set the enum for the player that is their turn
     			if (i == 0){
+					
     				driver.setTurn(Turn.playerOne);
     			}else if (i == 1){
     				driver.setTurn(Turn.playerTwo);
@@ -145,4 +153,11 @@ public class Driver{
 		//return null;
 	//}
 	
+    public Piece checkCell(int x, int y){
+        //Checks a cell to see if it is occupied, returns either NULL or the piece occupying the cell.
+        
+        return null;
+    }
+
+    
 }

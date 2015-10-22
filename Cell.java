@@ -1,11 +1,11 @@
 /************************* Cell.java ****************************
 Student Name: 						Student Number: 
-Devin Dagg
+Devin Dagg							0852134
 Erik Zorn - Wallentin 				0864583
-Taha Ansari
-Vincent Yong
+Taha Ansari							0849535
+Vincent Yong						0744993
  
-Date: Thur, Oct.15 / 2015			Course Name: CIS3260
+Date: Wed, Oct.21 / 2015			Course Name: CIS3260
 I have exclusive control over this submission via my password.
 By including this statement in this header comment, I certify that:
 1) I have read and understood the University policy on academic integrity;
@@ -24,7 +24,7 @@ public class Cell{
 	private Piece occupant;
 	
 	public Cell(){
-		occupant = null;
+		occupant = new Piece();
 	}
 	
 	public Cell(Piece occupant){
@@ -34,12 +34,12 @@ public class Cell{
 	//Getter's
 	
 	public Piece getOccupant(){
-		return occupant;
+		return this.occupant;
 	}
 
 	//Setter's
 	
 	public void setOccupant(Piece p){
-		occupant = p;
+		this.occupant = p;
 	}
 }
