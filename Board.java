@@ -123,19 +123,4 @@ public class Board{
 		
 		return false;
 	}
-
-	/*public static void main(String [ ] args){
-		Board test = new Board(5,6); 
-		Piece num1 = new Piece(); 
-		Player p1 = new Player(); 
-		boolean result = false; 
-
-		System.out.println(num1.getX());
-		result = p1.placePiece(test,num1,2,3);
-
-		System.out.println("result: " + result);
-
-
-		//System.out.print(test.checkCell(0,0)); 
-	}*/ 
 }

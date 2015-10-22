@@ -11,11 +11,15 @@ Compilation
 **********************
 
 To compile this program make sure you are in the correct directory in the terminal for where your file is.
-Next type make in the command prompt.
+Next, type the following command in the command prompt: 
+
+make
+
+OR
 
 javac -cp . Piece.java Cell.java Board.java Player.java Rules.java View.java viewBoard.java Driver.java
 
-Make sure to compile ALL java files! 
+This compiles all files and make .class files.
 
 ***********************
 Running the program(s)
@@ -25,11 +29,12 @@ The main is located in: Driver.java
 
 Once it is compiled, type:
 
-java -cp . Driver
+make run
 
 OR
 
-java -cp . Driver.java
+java -cp . Driver
+
 
 To run the program! You should see a prompt that asks for the number of players.
 Input 1 or 2 to start the program, any other input is denied!

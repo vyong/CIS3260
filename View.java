@@ -39,9 +39,6 @@ public class View{
 
 	public void displayViewBoard(){
 		//Displays the board on the screen.
-		//int rows = 5; 
-	 	//int cols = 6; 
-	 	//needs to print out the cell array now 
 	 	System.out.print("___________"); 
 	 	System.out.print("\n"); 
 		for(int y = 0; y<6; y++){
