@@ -36,7 +36,7 @@ public class Board{
 		this.length = length;
 		this.width = width;
 		this.cells = new Cell[length][width];
-		System.out.println(length +" : "+ width);
+		System.out.println("Board size "+ length +" : "+ width);
 		//for loop for testing purposes
 		for(int i=0; i<length;i++)
 		{

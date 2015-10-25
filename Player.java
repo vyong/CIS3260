@@ -132,8 +132,7 @@ public class Player{
 			return true;
 		}
 		return false;
-	}
-	
+	}	
 	
 	
 	//Getter's
