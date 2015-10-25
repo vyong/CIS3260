@@ -29,24 +29,39 @@ public static void main(String [ ] args)
 		
  		System.out.println("---- Rules ----");
  		Rules rules = new Rules(); 
-		Piece piece2 = new Piece(); 
+		Piece piece2 = new Piece();
+		Piece piece3 = null;
 		Boolean result = false; 
 		piece2.setX(3);
 		piece2.setY(4);
 
-		System.out.println("Testing valid attack method ");
+		System.out.println("Testing validAttack method with 2 white pieces beside each other:");
 		result = rules.validAttack(piece1,piece2,piece1.getX(),piece1.getY(),piece2.getX(),piece2.getY()); 
-		System.out.println("result: " + result);
-		System.out.println("Testing valid move method ");
+		System.out.println("Expected False. Result: " + result + "\n");
+
+		//Testing validMove
+		System.out.println("Testing validMove method with piece going from 2,3 to 3,3:");
+		result = rules.validMove(piece1, piece1.getX(), piece1.getY(), 3, 3);
+		System.out.println("Expected true. Result: " + result + "\n");
+		System.out.println("Testing validMove method with piece going from 2,3 to 3,2:");
 		result = rules.validMove(piece1, piece1.getX(), piece1.getY(), 3, 2); 
-		System.out.println("result: " + result);
-		System.out.println("Testing valid place method ");
-		result = rules.validPlace(piece1,piece1.getX(), piece1.getY());
-		System.out.println("result: " + result);
-		System.out.println("Testing valid take method ");
+		System.out.println("Expected false. Result: " + result + "\n");
+
+		//Testing validPiece
+		System.out.println("Testing validPlace method. Sending a null piece (taken from board)");
+		result = rules.validPlace(piece3,0 ,0);
+		System.out.println("Expected true. result: " + result + "\n");
+		System.out.println("Testing validPlace method. Sending a not-null piece (taken from board)");
+		result = rules.validPlace(piece2, piece2.getX() ,piece2.getY());
+		System.out.println("Expected false. result: " + result + "\n");
+
+
+		System.out.println("Testing validTake method. Sending a piece taken from a non-empty cell to the function:");
 		result = rules.validTake(piece1, piece1.getX(), piece1.getY()); 
-		System.out.println("result: " + result);
-		System.out.println("");
+		System.out.println("Expected true. Result: " + result + "\n");
+		System.out.println("Testing validTake method. Sending a piece taken from an empty cell to the function:");
+		result = rules.validTake(piece3, 0, 0); 
+		System.out.println("Expected false. Result: " + result + "\n");
 
  		System.out.println("---- Board ----"); 
  		Board testBoard = new Board(5,6); 
